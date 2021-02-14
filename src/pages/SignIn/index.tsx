@@ -15,7 +15,7 @@ import logoImg from '../../assets/logo.svg';
 import { Container, Content, AnimationContainer, Background } from './styles';
 import getValidationErrors from '../../utils/getValidationErrors';
 
-import useAuth from '../../hooks/auth';
+import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 
 interface SignInFormData {
@@ -53,7 +53,8 @@ const SignIn: React.FC = () => {
           password: data.password,
         });
 
-        history.push('/dashboard');
+        window.location.reload();
+        // history.push('/dashboard');
       } catch (error) {
         if (error instanceof Yup.ValidationError) {
           const errors = getValidationErrors(error);
@@ -91,7 +92,7 @@ const SignIn: React.FC = () => {
 
             <Button type="submit">Entrar</Button>
 
-            <a href="aaaaa">Esqueci minha senha</a>
+            <Link to="/forgot-password">Esqueci minha senha</Link>
           </Form>
 
           <Link to="/signup">

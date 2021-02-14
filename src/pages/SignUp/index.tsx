@@ -47,8 +47,6 @@ const SignUp: React.FC = () => {
           abortEarly: false,
         });
 
-        history.push('/');
-
         addToast({
           type: 'success',
           title: 'Cadastro realizado',
@@ -56,6 +54,8 @@ const SignUp: React.FC = () => {
         });
 
         await api.post('/users', data);
+
+        history.push('/');
       } catch (error) {
         const errors = getValidationErrors(error);
         formRef.current?.setErrors(errors);
