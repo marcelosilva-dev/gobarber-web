@@ -70,7 +70,7 @@ const SignIn: React.FC = () => {
         });
       }
     },
-    [signIn, addToast, history],
+    [signIn, addToast],
   );
   return (
     <Container>
