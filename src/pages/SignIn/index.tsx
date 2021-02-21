@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import * as Yup from 'yup';
 import { FormHandles } from '@unform/core';
@@ -29,9 +29,7 @@ const SignIn: React.FC = () => {
   const { user, signIn } = useAuth();
   const { addToast } = useToast();
 
-  const history = useHistory();
-
-  console.log(user);
+  // const history = useHistory();
 
   const handleSubmit = useCallback(
     async (data: SignInFormData) => {
